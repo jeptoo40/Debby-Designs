@@ -1,35 +1,57 @@
-// src/components/Hero.jsx
 import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative bg-yellow-100">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-banner.jpg')" }}
-      ></div>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
-
-      {/* Content */}
-      <div className="relative z-10 text-center py-32 px-4">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-          Masanaa Handmade Bracelets
+    <section
+      style={{
+        backgroundImage: "url('/images/img1.jpg.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "70vh",
+        display: "flex",
+        alignItems: "flex-start",
+        justifyContent: "center",
+        paddingTop: "120px",
+        textAlign: "center",
+        color: "white"
+      }}
+    >
+      <div>
+        <h1 style={{ fontSize: "60px", marginBottom: "20px" }}>
+          Debby Designs
         </h1>
-        <p className="text-xl md:text-2xl text-white mb-6">
-          Unique, handcrafted bracelets for every occasion
+        <p style={{ fontSize: "20px", maxWidth: "600px", margin: "auto" }}>
+          Beautiful handcrafted wristwear made with love.
         </p>
-        <a
-          href="https://wa.me/254113427101?text=Hi, I want to order a product"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition"
-        >
-          Order on WhatsApp
-        </a>
+
+        <div style={{ marginTop: "30px" }}>
+          <button
+            style={{
+              padding: "12px 24px",
+              background: "white",
+              color: "black",
+              border: "none",
+              marginRight: "10px",
+              cursor: "pointer"
+            }}
+          >
+            View Products
+          </button>
+
+          <a
+            href="https://wa.me/254700000000"
+            style={{
+              padding: "12px 24px",
+              border: "1px solid white",
+              textDecoration: "none",
+              color: "white"
+            }}
+          >
+            Order on WhatsApp
+          </a>
+        </div>
       </div>
+      
     </section>
   );
 }
