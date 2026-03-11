@@ -1,5 +1,13 @@
 import React from "react";
 
+const featureImages = [
+  "/images/f1.jpg.jpeg",
+  "/images/f2jpg.jpeg",
+  "/images/f4.jpeg",
+ 
+  
+];
+
 export default function FeatureSection() {
   return (
     <section
@@ -8,12 +16,12 @@ export default function FeatureSection() {
         backgroundImage: "url('/images/f1.jpg.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "30vh",
+        minHeight: "40vh",
         padding: "60px 40px",
         color: "white",
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "stretch",
+        alignItems: "flex-start",
         overflow: "hidden"
       }}
     >
@@ -25,27 +33,21 @@ export default function FeatureSection() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(0,0,0,0.15)", // only 15% black, mostly transparent
+          backgroundColor: "rgba(0,0,0,0.2)",
           zIndex: 1
         }}
       ></div>
 
-      {/* Left column - top-left text */}
+      {/* Left: Paragraph */}
       <div
         style={{
           position: "relative",
           zIndex: 2,
           flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start"
+          marginRight: "20px"
         }}
       >
-        <p style={{
-          fontSize: "18px",
-          lineHeight: "1.7",
-          marginBottom: "24px"
-        }}>
+        <p style={{ fontSize: "18px", lineHeight: "1.7" }}>
           Debby Designs creates handcrafted bracelets with love and passion.
           Each piece begins with intentional design, where beauty and comfort
           are shaped together and refined patiently until it feels resolved.
@@ -53,30 +55,34 @@ export default function FeatureSection() {
           your loved ones.
         </p>
       </div>
-      
 
-      {/* Right column - bottom-right paragraph */}
+      {/* Right: Scrolling images */}
       <div
         style={{
           position: "relative",
           zIndex: 2,
           flex: 1,
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          alignItems: "flex-end"
+          overflowX: "auto",
+          gap: "16px"
         }}
       >
-        <p style={{
-          fontSize: "19px",
-          lineHeight: "1.6",
-          maxWidth: "280px",
-          textAlign: "right"
-        }}>
-          Quality handcraft in every piece, designed to inspire and delight. Turning rare gemstones and precious metals into divine expressions of self. Whether it’s the quiet power of a subtle gold stud or the dramatic allure of a shimmering drop earring, our creations are "the perfect spice" to your unique style, ensuring that every moment you wear them becomes a sparkling journey
-        </p>
+        {featureImages.map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`Feature ${index + 1}`}
+            style={{
+              flex: "0 0 auto",
+              width: "180px",
+              height: "180px",
+              objectFit: "cover",
+              borderRadius: "12px",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.3)"
+            }}
+          />
+        ))}
       </div>
     </section>
   );
 }
-  
